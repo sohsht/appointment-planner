@@ -1,21 +1,16 @@
 import React from "react";
 
 export const Tile = ({
-  object
+  tile
 }) => {
 
-  const data = object;
-
-  const info = data.map((data, index) => {
-    if (index === 0) {
-      return <p className="tile-title" key={index}>{data}</p>
-    } else {
-      return <p className="tile" key={index}>{data}</p>
-    }
-  })
   return (
     <div className="tile-container">
-      {info}
+      {Object.values(tile).map((value, index) => (
+        <p key={index} className={`${index === 0 ? "tile-title" : ""} tile`}>
+          {value}
+        </p>
+      ))}
     </div>
   );
 };

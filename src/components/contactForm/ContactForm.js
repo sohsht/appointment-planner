@@ -11,12 +11,30 @@ export const ContactForm = ({
 }) => {
   return (
     <form onSubmit={handleSubmit}>
-      <input type='text' value={name} onChange={setName} placeholder="Name"></input>
-      <input type='tel' value={phone} onChange={setPhone} placeholder="Phone Number" pattern="[1-9][0-9]{2}-[1-9][0-9]{2}-[0-9]{4}"></input>
-      <input type='email' value={email} onChange={setEmail} placeholder="Email"></input>
-      <input type='submit'></input>
+      <input
+        type='text'
+        name="name"
+        value={name} 
+        onChange={(e) => setName(e.target.value)} 
+        placeholder="Name"
+      />
+      <input 
+        type='tel'
+        name="phone"
+        value={phone} 
+        onChange={(e) => setPhone(e.target.value)} 
+        placeholder="Phone Number" 
+        pattern="[1-9][0-9]{2}-[1-9][0-9]{2}-[0-9]{4}"
+      />
+      <input 
+        type='email'
+        name="email"
+        value={email} 
+        onChange={(e) => setEmail(e.target.value)} 
+        placeholder="Email"
+      />
+      <input type="submit" value="Add Contact"></input>
     </form>
   );
 };
 
-export default ContactForm;
